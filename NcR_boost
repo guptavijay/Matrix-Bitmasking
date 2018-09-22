@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#include<boost/multiprecision/cpp_int.hpp>
+using namespace boost::multiprecision;
+using namespace std;
+#define h 1000000007
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,r;
+	    cin>>n>>r;
+	    cpp_int y=1;      //(n-r)!
+	    cpp_int z=1;      //(r)!
+	    cpp_int x=1;      //(n)!
+	    for(int i=1;i<=n;i++)
+	    {
+	        x=(x*i);
+	    }
+	    for(int j=1;j<=r;j++)
+	    {
+	        z=(z*j);
+	    }
+	    for(int k=1;k<=(n-r);k++)
+	    {
+	        y= (y*k);
+	    }
+	  //  cout<<x<<y<<z;
+	    cpp_int deno=(y*z);
+	    cpp_int ans= x/deno ;
+	   cout<<(ans%h)<<endl;
+	    
+	}
+	return 0;
+}
